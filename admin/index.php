@@ -73,7 +73,7 @@ if (($action == "edit") || ($action == "add") || ($action == "import") || ($acti
 		?>
 		</div>
 	</div>
-	<div id="footer"><?php include (INCLUDES.'footer.inc.php'); ?></div>
+	<div id="footer"><?php include (ADMIN_INCLUDES.'footer.inc.php'); ?></div>
 </div>
 </body>
 </html>

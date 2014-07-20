@@ -23,5 +23,6 @@ define('TEMPLATES',ROOT.'templates'.DIRECTORY_SEPARATOR);
 define('CLASSES',ROOT.'classes'.DIRECTORY_SEPARATOR);
 define('IMAGES_DIR',ROOT.'images'.DIRECTORY_SEPARATOR);
 define('VENDORS_DIR', ROOT.'vendor'.DIRECTORY_SEPARATOR);
-require(CONFIG.'config.php');
-?>
+define('SRC_DIR',ROOT.'src'.DIRECTORY_SEPARATOR);
+require_once(INCLUDES.'autoloader.php');
+require_once(CONFIG.'config.php');

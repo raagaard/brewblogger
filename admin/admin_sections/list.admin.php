@@ -1,10 +1,16 @@
+<?php
+$tableClass = Table_Factory::getTableClassFromName($dbTable);
+?>
 <table class="dataTable">
 <tr>
 <td width="90%">
 <div id="breadcrumbAdmin">
 <?php if ($action != "default") 
 echo "<a href=\"index.php\">Administration</a>"; else echo "Administration"; ?> &gt; 
-<?php if (
+<?php
+if ($tableClass) {
+    echo $tableClass->getAdminBreadcrumb();
+} else if (
 ($dbTable == "recipes")    				|| 
 ($dbTable == "hops")      				||
 ($dbTable == "malt")      				|| 
@@ -35,7 +41,10 @@ if (($row_user['userLevel'] == "1") && (($action == "list") && (($dbTable == "br
 } ?>
 </tr>
 </table>
-<?php 
+<?php
+if ($tableClass) {
+    echo $tableClass->getAdminList();
+} else {
 if (($action == "list") && ($dbTable == "brewing")) 		include ('list/brewblogs.list.php'); 
 if (($action == "list") && ($dbTable == "recipes")) 		include ('list/recipes.list.php'); 
 if (($action == "list") && ($dbTable == "styles"))  		include ('list/styles.list.php'); 
@@ -62,5 +71,4 @@ if ($row_pref['mode'] == "2") {
 if  ($row_user['userLevel'] =="1") { 
 	if (($action == "list") && ($dbTable == "brewingcss"))  include ('list/brewingcss.list.php'); 
  	}
-	
-?>
+}

@@ -1,6 +1,5 @@
 <?php
 const HTTP_RESPONSE_NOT_FOUND = 404;
-require_once('vendor/autoload.php');
 
 require('paths.php');
 require_once(CONFIG . 'config.php');
