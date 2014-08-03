@@ -1,0 +1,7 @@
+{% if errors|length > 0 %}
+<table class='dataTable'>
+{% for error in errors %}
+<tr><td class='error'>{{ error.text }}</td></tr>
+{% endfor %}
+</table>
+{% endif %}
